@@ -1,5 +1,3 @@
-# README.md
-
 # TidyFlow: A Lightweight Data Preprocessing Toolbox
 
 TidyFlow is a Python package designed to simplify and streamline data preprocessing. It provides modular, user-friendly functions for cleaning, encoding, scaling, and transforming data, making it easier for data scientists and machine learning practitioners to prepare datasets efficiently.
