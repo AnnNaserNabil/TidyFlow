@@ -1,5 +1,6 @@
 import pandas as pd
-from .logger import log_action
+from tidyflow.utils.logger import log_action
+
 
 def handle_outliers(df: pd.DataFrame, method: str = 'iqr', strategy: str = 'clip') -> pd.DataFrame:
     """
