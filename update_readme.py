@@ -2,29 +2,25 @@ import requests
 import re
 
 PACKAGE_NAME = "tidyflow"  
-README_FILE = "README.md"
 
-def get_total_downloads(package):
-    url = f"https://pypistats.org/api/packages/{package}/overall"
-    response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
-        return sum(item["downloads"] for item in data["data"])
-    return None
+# Fetch the overall download count from PyPIStats
+url = f"https://pypistats.org/api/packages/{PACKAGE_NAME}/overall"
+response = requests.get(url)
+data = response.json()
 
-def update_readme(downloads):
-    with open(README_FILE, "r") as file:
-        content = file.read()
+# Sum up all downloads
+total_downloads = sum(item["downloads"] for item in data["data"])
 
-    new_badge = f"https://img.shields.io/badge/{PACKAGE_NAME}-{downloads}-blue"
-    updated_content = re.sub(r"https://img.shields.io/badge/.*?-blue", new_badge, content)
+# Read the README file
+with open("README.md", "r") as file:
+    readme_content = file.read()
 
-    with open(README_FILE, "w") as file:
-        file.write(updated_content)
+# Replace old badge with the updated value
+new_badge = f"![PyPI - Downloads](https://img.shields.io/badge/Downloads-{total_downloads}-blue)"
+updated_content = re.sub(r"!\[PyPI - Downloads\]\(.*?\)", new_badge, readme_content)
 
-downloads = get_total_downloads(PACKAGE_NAME)
-if downloads:
-    update_readme(downloads)
-    print(f"Updated README with {downloads} total downloads.")
-else:
-    print("Failed to fetch download data.")
+# Write back to README.md
+with open("README.md", "w") as file:
+    file.write(updated_content)
+
+print(f"Updated README with {total_downloads} downloads!")
