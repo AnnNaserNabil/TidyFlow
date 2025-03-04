@@ -4,7 +4,7 @@ TidyFlow is a Python package designed to simplify and streamline data preprocess
 
 
 
-![PyPI Downloads](https://pepy.tech/badge/tidyflow)
+![PyPI Downloads](https://pepy.tech/badge/tidyflow?color=green)
 
 
 ## Features
