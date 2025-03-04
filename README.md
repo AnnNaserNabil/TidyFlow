@@ -4,13 +4,7 @@ TidyFlow is a Python package designed to simplify and streamline data preprocess
 
 
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Downloads-Loading-blue" alt="PyPI - Downloads">
-</p>
-
-# TidyFlow
-
-![PyPI Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypistats.org%2Fapi%2Fpackages%2Ftidyflow%2Foverall&query=%24%5B%3F%28%40.category%3D%3D%22with_mirrors%22%29%5D.downloads&label=Downloads&color=blue)
+![PyPI Downloads](https://pepy.tech/badge/tidyflow)
 
 
 ## Features
